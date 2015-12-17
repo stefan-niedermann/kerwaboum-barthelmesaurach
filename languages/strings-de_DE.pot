@@ -1,0 +1,10 @@
+# Copyright (C) 2014 Stefan Niedermann
+msgid ""
+msgstr ""
+"Project-Id-Version: niedermann 0.0.1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+
+msgid "Header Menu"
+msgstr "Hauptmenü"
