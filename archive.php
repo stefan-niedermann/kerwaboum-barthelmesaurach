@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	<div id="main">
-		<?php foreach(posts_by_year() as $year => $posts) : ?>
+		<?php foreach(posts_by_year(get_queried_object()->term_id) as $year => $posts) : ?>
 			<h2><?php echo $year; ?></h2>
 			<ul>
 				<?php $posts = sort_posts($posts, 'post_date', 'DESC'); ?>

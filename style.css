@@ -4,7 +4,7 @@ Theme URI:
 Author: Stefan Niedermann
 Author URI: http://www.niedermann.it/
 Description: 
-Version: 0.0.1
+Version: 0.0.2
 License: 
 License URI: 
 Description: This theme is restricted to Kerwaboum Barthelmesaurach e. V.
@@ -18,6 +18,8 @@ Description: This theme is restricted to Kerwaboum Barthelmesaurach e. V.
 }
 
 .menu-bannermenue-container:empty {display: none;}
+
+img {height: auto;}
 
 img.alignright {
 	float: right;
@@ -368,7 +370,47 @@ footer.page-footer p {
 }
 
 #html5 {width: 150px;height: 150px;}
+.comment-form {
+  background: #eee;
+  padding: 1rem;
+}
+.comments-area textarea, .comments-area input {
+  border: 0;
+  box-shadow: 1px 1px 2px #aaa;
+  padding: .5rem;
+  box-sizing: border-box;
+}
 
+.comments-area textarea:focus, .comments-area input:focus {
+  box-shadow: 1px 1px 2px #777;
+}
+
+.comments-area textarea {
+  resize: vertical;
+  width: 100% !important;
+}
+.comments-area label {
+  width: 25%;
+    float: left;
+}
+.comments-area label + input {
+  width: 75%;
+}
+.comments-area input[type="submit"] {
+  float: right;
+  background: #D50D17;
+  color: #fff;
+}
+.comments-area :last-child::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.comment {
+  box-shadow: 1px 1px 2px #aaa;
+  margin-top: 1rem;
+  border-top: 0 !important;
+}
 .commentlist {list-style: none;padding: 0;}
 
 .commentlist ol {list-style: none;}
@@ -457,10 +499,6 @@ a.comment-edit-link {
     box-sizing: border-box;
     margin: 0 !important;
 }
-.comment-form label {
-    width: 20%;
-    float: left;
-}
 .comment-form textarea {
       width: 85%;
 }
@@ -480,6 +518,7 @@ span.required {color: #D50D17;}
 	float: left;
 	margin-right: 10px;
 	margin-bottom: 10px;
+	height: auto;
 }
 .page-id-16 #main > .entry {
 	width: 70%;
@@ -532,6 +571,15 @@ span.required {color: #D50D17;}
 @media (min-width: 800px) {
 	#main-nav button {
 		display: none;
+	}
+	/*.breadcrumb {
+		position: sticky;
+		top: -5px;
+		background-color: #fff;
+	}*/
+	#main-nav .menu-hauptmenue-container {
+		position: sticky;
+		top: 0;
 	}
 	.js #main-nav .menu-hauptmenue-container {
 		display: block;

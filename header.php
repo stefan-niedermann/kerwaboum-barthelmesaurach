@@ -5,9 +5,9 @@
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
-		<link rel="shortcut icon" href="/favicon.png" type="image/png" />
+		<!--link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /-->
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-		<meta name="theme-color" content="#D50D17" />
+		<!--meta name="theme-color" content="#D50D17" /-->
 		<?php wp_enqueue_style('style', get_template_directory_uri().'/style.css' ); ?>
 		<?php wp_enqueue_style('normalize', get_template_directory_uri().'/css/normalize-3.0.0.css', array(), '3.0.0' ); ?>
 		<?php wp_enqueue_script( 'script.js', get_template_directory_uri() . '/js/script.js' ); ?>

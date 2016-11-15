@@ -68,31 +68,31 @@
 
 	function the_breadcrumb() {
 		if(!is_home()) {
-			echo '<ul class="breadcrumb">';
-			echo '<li><a href="';
+			echo '<ol class="breadcrumb" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">';
+			echo '<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="';
 			echo get_option('home');
-			echo '">';
+			echo '" itemprop="item"><span itemprop="name">';
 			bloginfo('name');
-			echo '</a></li>';
+			echo '</span><meta itemprop="position" content="1"></a></li>';
 			if (is_category() || is_single()) {
-				echo '<li>';
+				echo '<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><span itemprop="name">';
 				the_category('title_li=');
-				echo '</li>';
+				echo '</span><meta itemprop="position" content="2"></li>';
 				if (is_single()) {
-					echo '<li>';
+					echo '<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="' . get_permalink() . '" itemprop="item"><span itemprop="name">';
 					the_title();
-					echo '</li>';
+					echo '</span><meta itemprop="position" content="3"></a></li>';
 				}
 			} elseif (is_page()) {
-				echo '<li>';
+				echo '<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><span itemprop="name">';
 				echo the_title();
-				echo '</li>';
+				echo '</span><meta itemprop="position" content="2"></li>';
 			}
-			echo '</ul>';
+			echo '</ol>';
 		}
 	}
 
-	function posts_by_year() {
+	function posts_by_year($category = "") {
 	  // array to use for results
 	  $years = array();
 
@@ -102,7 +102,8 @@
 		'orderby' => 'post_date',
 		'order' => 'ASC',
 		'post_type' => 'post',
-		'post_status' => 'publish'
+		'post_status' => 'publish',
+		'category' => $category
 	  ));
 
 	  // loop through posts, populating $years arrays
