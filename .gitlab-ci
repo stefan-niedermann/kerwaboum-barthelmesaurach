@@ -1,0 +1,23 @@
+image: php:latest
+
+stages:
+  - test
+#  - deploy
+
+test_job:
+  stage: test
+  script:
+    - find . -name '*.php*' -print0 | xargs -0 -n1 -P8 php -l
+
+#deploy_job:
+#  stage: deploy
+#  script:
+#    - echo "Update Apt-Cache"
+#    - apt-get update
+#    - echo "Install lftp"
+#    - apt-get install lftp
+#    - echo "Deploy to production server"
+#    - lftp -u $FTP_PRODUCTION_USER,$FTP_PRODUCTION_PASSWORD -e "mirror -R ./dist/ $FTP_PRODUCTION_PATH/www-$CI_COMMIT_SHA;rm -r $FTP_PRODUCTION_PATH/www-alt;mv $FTP_PRODUCTION_PATH/www $FTP_PRODUCTION_PATH/www-alt;mv $FTP_PRODUCTION_PATH/www-$CI_COMMIT_SHA $FTP_PRODUCTION_PATH/www;quit;" $FTP_PRODUCTION_URL
+#  only:
+#    - master
+#  when: manual
