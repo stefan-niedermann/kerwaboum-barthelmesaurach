@@ -18,3 +18,8 @@ body > nav {
     top: 0;
     z-index: 2;
 }
+
+.container li:first-child img {
+    vertical-align: middle;
+    margin-right: .5rem;
+}
