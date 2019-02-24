@@ -1,13 +1,13 @@
-image: php:latest
+#image: php:latest
 
-stages:
-  - test
+#stages:
+#  - test
 #  - deploy
 
-test_job:
-  stage: test
-  script:
-    - find . -name '*.php*' -print0 | xargs -0 -n1 -P8 php -l
+#test_job:
+#  stage: test
+#  script:
+#    - find . -name '*.php*' -print0 | xargs -0 -n1 -P8 php -l
 
 #deploy_job:
 #  stage: deploy

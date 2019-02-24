@@ -6,7 +6,7 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#2196F3" />
+    <meta name="theme-color" content="#000000" />
     <meta name="robots" content="index, follow" />
 
     <base href="./" />
@@ -25,36 +25,82 @@
                 linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
                 linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
                 linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-                background-size: 20px 20px;
-        }
-        header h4 {
-            padding-bottom: 2rem;
+            background-size: 20px 20px;
         }
 
-        .primary-cta a {
+        header.section {
+            padding-bottom: 4rem;
+        }
+
+        @media (min-width: 601px) {
+            .primary-actions {
+                padding: 4rem 0;
+            }
+        }
+
+        .primary-actions a {
             margin-top: 1rem;
+        }
+
+        .timer {
+            position: fixed;
+            top: 14rem;
+            right: -2rem;
+            transform: rotate(30deg);
+            transform-origin: top right;
+            z-index: 2;
+            padding: 1rem 7rem;
         }
     </style>
 
-    <script defer type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script defer type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            var days, hours, minutes, seconds, timer;
+            var startDate = new Date();
+            timer = document.createElement('div');
+            timer.setAttribute('class', 'timer red darken-2 white-text hide-on-med-and-down');
+            document.body.appendChild(timer);
+            endDate = new Date(startDate.getFullYear() + '-09-16').getTime();
+            var interval = setInterval(calculate, 1000);
+            function calculate() {
+                var timeRemaining = parseInt((endDate - new Date().getTime()) / 1000);
+                if (timeRemaining >= 0) {
+                    days = parseInt(timeRemaining / 86400);
+                    timeRemaining = (timeRemaining % 86400);
+                    hours = parseInt(timeRemaining / 3600);
+                    timeRemaining = (timeRemaining % 3600);
+                    minutes = parseInt(timeRemaining / 60);
+                    timeRemaining = (timeRemaining % 60);
+                    seconds = parseInt(timeRemaining);
+                    timer.innerText = days + ' Tage, ' + hours + ' Stunden, ' + minutes + ' Minuten, ' + seconds + ' Sekunden';
+                } else {
+                    timer.remove();
+                    clearInterval(interval);
+                    return;
+                }
+            };
+            calculate();
+        });
+    </script>
 </head>
 
 <body>
     <ul id="slide-out" class="sidenav">
-        <li><a class="waves-effect black lighten-4" href="index.html"><i class="material-icons">home</i>Startseite</a>
+        <li><a class="waves-effect grey lighten-2" href="index.html"><i class="material-icons">home</i>Startseite</a>
         </li>
+        <li><a class="waves-effect" href="programm.html"><i class="material-icons">music_note</i>Programm</a></li>
         <li><a class="waves-effect" href="vorstandschaft.html"><i class="material-icons">people</i>Vorstandschaft</a>
         </li>
-        <li><a class="waves-effect" href="aufnahmeantrag.html"><i class="material-icons">comment</i>Aufnahmeantrag</a>
+        <li><a class="waves-effect" href="aufnahmeantrag.html"><i class="material-icons">format_align_left</i>Aufnahmeantrag</a>
         </li>
-        <li><a class="waves-effect" href=""><i class="material-icons">map</i>Anreise</a></li>
+        <li><a class="waves-effect" href="anreise.html"><i class="material-icons">map</i>Anreise</a></li>
     </ul>
     <div class="navbar-fixed hide-on-large-only">
         <nav class="black">
             <a href="#" data-target="slide-out" class="sidenav-trigger">
-                <i class="material-icons left">menu</i> Drauracher Kerwa
+                <i class="material-icons left">menu</i> Menü
             </a>
         </nav>
     </div>
@@ -62,25 +108,26 @@
         <div class="container">
             <ul>
                 <li><a class="waves-effect" href="index.html">Startseite</a></li>
+                <li><a class="waves-effect" href="programm.html">Programm</a></li>
                 <li><a class="waves-effect" href="vorstandschaft.html">Vorstandschaft</a></li>
                 <li><a class="waves-effect" href="aufnahmeantrag.html">Aufnahmeantrag</a></li>
                 <li><a class="waves-effect" href="anreise.html">Anreise</a></li>
             </ul>
         </div>
     </nav>
-    <header class="section grey darken-4 white-text hide-on-small-only">
+    <header class="section grey darken-4 white-text">
         <h1 class="center">Kerwa&shy;boum Barthel&shy;mesaurach</h1>
-        <h4 class="center">Auf geht’s zur Drauracher Kerwa!</h4>
+        <h4 class="center hide-on-small-only">Auf geht’s zur Drauracher Kerwa!</h4>
     </header>
-    <div class="section hide-on-small-only">
+    <div class="section primary-actions">
         <div class="row center primary-cta">
-            <a href="./w" class="btn-large waves-effect waves-light red darken-1"><i
+            <a href="programm.html" class="btn-large waves-effect waves-light red darken-1"><i
                     class="material-icons left">calendar_today</i>
                 Termine 2019</a>&nbsp;
-            <a href="./w" class="btn-large waves-effect waves-light red darken-1"><i
+            <a href="./w" class="btn-large waves-effect waves-light red darken-1 hide-on-small-only"><i
                     class="material-icons left">photo</i>
                 Kerwa 2018</a>&nbsp;
-            <a href="./wm-2018.html" class="btn-large waves-effect red darken-1"><i
+            <a href="./wm-2018.html" class="btn-large waves-effect red darken-1 hide-on-small-only"><i
                     class="material-icons left">photo</i>
                 WM 2018</a>
         </div>
@@ -120,7 +167,9 @@
                 </div>
             </div>
             <div class="row">
-                <video class="col s12" controls muted src="./vid/baumstellen-2018.mov"></video>
+                <div class="col s12">
+                    <video controls muted src="./vid/baumstellen-2018.mov"></video>
+                </div>
             </div>
         </div>
     </div>
@@ -156,9 +205,9 @@
                 <div class="col s12 m6 l4">
                     <h5>Kontakt</h5>
                     <ul>
-                        <li><a href="mailto:tobias.meermann@googlemail.com"
+                        <li><a href="mailto:tobias.meermann@gmail.com"
                                 class="waves-effect btn-flat white-text truncate"><i
-                                    class="material-icons left">email</i>tobias.meermann@googlemail.com</a></li>
+                                    class="material-icons left">email</i>tobias.meermann@gmail.com</a></li>
                         <li><a href="tel:+4915253782503" class="waves-effect btn-flat white-text"><i
                                     class="material-icons left">smartphone</i>+49 152 53782503</a></li>
                         <li><a href="tel:+4991781653" class="waves-effect btn-flat white-text"><i

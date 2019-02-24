@@ -1,4 +1,4 @@
-img, video {
+img, video, canvas {
     max-width: 100%;
 }
 

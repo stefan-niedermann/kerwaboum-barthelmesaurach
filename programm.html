@@ -32,25 +32,39 @@
             padding-bottom: 2rem;
         }
 
-        .primary-cta a {
+        .primary-actions {
+            padding: 4rem 0;
+        }
+
+        .primary-actions a {
             margin-top: 1rem;
+        }
+
+        .timer {
+            position: fixed;
+            top: 14rem;
+            right: -2rem;
+            transform: rotate(30deg);
+            transform-origin: top right;
+            z-index: 2;
+            padding: 1rem 7rem;
         }
     </style>
 
-    <script defer type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script defer type="text/javascript" src="js/script.js"></script>
 </head>
 
 <body>
     <ul id="slide-out" class="sidenav">
-        <li><a class="waves-effect black lighten-4" href="index.html"><i class="material-icons">home</i>Startseite</a>
+        <li><a class="waves-effect grey lighten-2" href="index.html"><i class="material-icons">home</i>Startseite</a>
         </li>
+        <li><a class="waves-effect" href="programm.html"><i class="material-icons">dashboard</i>Programm</a></li>
         <li><a class="waves-effect" href="vorstandschaft.html"><i class="material-icons">people</i>Vorstandschaft</a>
         </li>
-        <li><a class="waves-effect" href="aufnahmeantrag.html"><i class="material-icons">comment</i>Aufnahmeantrag</a>
+        <li><a class="waves-effect" href="aufnahmeantrag.html"><i class="material-icons">format_align_left</i>Aufnahmeantrag</a>
         </li>
-        <li><a class="waves-effect" href=""><i class="material-icons">map</i>Anreise</a></li>
+        <li><a class="waves-effect" href="anreise.html"><i class="material-icons">map</i>Anreise</a></li>
     </ul>
     <div class="navbar-fixed hide-on-large-only">
         <nav class="black">
@@ -63,6 +77,7 @@
         <div class="container">
             <ul>
                 <li><a class="waves-effect" href="index.html">Startseite</a></li>
+                <li><a class="waves-effect" href="programm.html">Programm</a></li>
                 <li><a class="waves-effect" href="vorstandschaft.html">Vorstandschaft</a></li>
                 <li><a class="waves-effect" href="aufnahmeantrag.html">Aufnahmeantrag</a></li>
                 <li><a class="waves-effect" href="anreise.html">Anreise</a></li>
@@ -70,48 +85,8 @@
         </div>
     </nav>
     <header class="section grey darken-4 white-text hide-on-small-only">
-        <h1 class="center">Impressum</h1>
-        <h4 class="center">Auf geht’s zur Drauracher Kerwa!</h4>
+        <h1 class="center">Programm 2019</h1>
     </header>
-    <div class="section hide-on-small-only">
-        <div class="container">
-            <div class="row primary-cta">
-                <h2>Impressum</h2>
-                <div class="entry">
-                    <dl>
-                        <dt>Verantwortlich für den Inhalt</dt>
-                        <dd>Kerwaboum Barthelmesaurach e.V.</dd>
-                        <dd>1. Vorsitzender: Tobias Meermann<p></p>
-                            <address>Mildach 3<br>
-                                91126 Mildach</address>
-                            <address>Mobil: <a href="tel:+49 152 53782503">+49 152 53782503</a></address>
-                            <address>Web: <a
-                                    href="http://www.kerwaboum-barthelmesaurach.de">http://www.kerwaboum-barthelmesaurach.de</a><br>
-                                E-Mail: <a
-                                    href="mailto:info@kerwaboum-barthelmesaurach.de">info@kerwaboum-barthelmesaurach.de</a>
-                            </address>
-                        </dd>
-                        <dt>Urheberrecht</dt>
-                        <dd>Kerwaboum Barthelmesaurach e.V.</dd>
-                        <dt>Konzept &amp; Redaktion</dt>
-                        <dd>Kerwaboum Barthelmesaurach e.V.</dd>
-                        <dt>Logo-Design</dt>
-                        <dd>Björn Eckert</dd>
-                        <dt>Gestaltung &amp; technische Umsetzung</dt>
-                        <dd><a style="padding-right: 0; background: 0; margin-top: 10px; display: inline-block;"
-                                title="www.niedermann.it" href="http://www.niedermann.it" target="_blank"
-                                class="extern"><img class="alignnone wp-image-1650 size-medium" style="border: 0;"
-                                    src="http://www.kerwaboum-barthelmesaurach.de/wp-content/uploads/2014/05/www.niedermann.it-wide-NIT-300x55.png"
-                                    alt="Niedermann IT-Dienstleistungen"
-                                    srcset="https://www.kerwaboum-barthelmesaurach.de/wp-content/uploads/2014/05/www.niedermann.it-wide-NIT-300x55.png 300w, https://www.kerwaboum-barthelmesaurach.de/wp-content/uploads/2014/05/www.niedermann.it-wide-NIT-1024x188.png 1024w"
-                                    sizes="(max-width: 300px) 100vw, 300px" width="300" height="55"></a></dd>
-                        <dd>Diese Seite verwendet <a href="http://materialdesignicons.com/" target="_blank"
-                                class="extern">Material Design Icons</a>.</dd>
-                    </dl>
-                </div>
-            </div>
-        </div>
-    </div>
     <footer class="page-footer grey darken-4 white-text">
         <div class="container">
             <div class="row">
@@ -129,9 +104,9 @@
                 <div class="col s12 m6 l4">
                     <h5>Kontakt</h5>
                     <ul>
-                        <li><a href="mailto:tobias.meermann@googlemail.com"
+                        <li><a href="mailto:tobias.meermann@gmail.com"
                                 class="waves-effect btn-flat white-text truncate"><i
-                                    class="material-icons left">email</i>tobias.meermann@googlemail.com</a></li>
+                                    class="material-icons left">email</i>tobias.meermann@gmail.com</a></li>
                         <li><a href="tel:+4915253782503" class="waves-effect btn-flat white-text"><i
                                     class="material-icons left">smartphone</i>+49 152 53782503</a></li>
                         <li><a href="tel:+4991781653" class="waves-effect btn-flat white-text"><i

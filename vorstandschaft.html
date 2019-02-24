@@ -6,7 +6,7 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#2196F3" />
+    <meta name="theme-color" content="#000000" />
     <meta name="robots" content="index, follow" />
 
     <base href="./" />
@@ -24,10 +24,15 @@
         .primary-cta a {
             margin-top: 1rem;
         }
+
+        @media (max-width: 992px) {
+            .m6:nth-child(odd) {
+                clear: left;
+            }
+        }
     </style>
 
-    <script defer type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script defer type="text/javascript" src="js/script.js"></script>
 </head>
 
@@ -35,6 +40,7 @@
     <ul id="slide-out" class="sidenav">
         <li><a class="waves-effect black lighten-4" href="index.html"><i class="material-icons">home</i>Startseite</a>
         </li>
+        <li><a class="waves-effect" href="programm.html"><i class="material-icons">list</i>Programm</a></li>
         <li><a class="waves-effect" href="vorstandschaft.html"><i class="material-icons">people</i>Vorstandschaft</a>
         </li>
         <li><a class="waves-effect" href="aufnahmeantrag.html"><i class="material-icons">comment</i>Aufnahmeantrag</a>
@@ -52,6 +58,7 @@
         <div class="container">
             <ul class="">
                 <li><a class="waves-effect" href="index.html">Startseite</a></li>
+                <li><a class="waves-effect" href="programm.html">Programm</a></li>
                 <li><a class="waves-effect" href="vorstandschaft.html">Vorstandschaft</a></li>
                 <li><a class="waves-effect" href="aufnahmeantrag.html">Aufnahmeantrag</a></li>
                 <li><a class="waves-effect" href="anreise.html">Anreise</a></li>
@@ -59,7 +66,7 @@
         </div>
     </nav>
     <div class="section">
-        <h1 class="center">Vorstandschaft</h1>
+        <h1 class="center">Vor&shy;stand&shy;schaft</h1>
     </div>
     <div class="section">
         <div class="container">
