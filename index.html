@@ -51,6 +51,12 @@
             z-index: 2;
             padding: 1rem 7rem;
         }
+
+        @media(max-width: 1260px) {
+            .timer {
+                display: none;
+            }
+        }
     </style>
 
     <script defer type="text/javascript"
@@ -61,7 +67,7 @@
             var days, hours, minutes, seconds, timer;
             var startDate = new Date();
             timer = document.createElement('div');
-            timer.setAttribute('class', 'timer red darken-2 white-text hide-on-med-and-down');
+            timer.setAttribute('class', 'timer red darken-2 white-text');
             document.body.appendChild(timer);
             endDate = new Date(startDate.getFullYear() + '-09-16').getTime();
             var interval = setInterval(calculate, 1000);
@@ -127,10 +133,10 @@
             <a href="programm.html" class="btn-large waves-effect waves-light red darken-1"><i
                     class="material-icons left">calendar_today</i>
                 Programm 2019</a>&nbsp;
-            <a href="./w" class="btn-large waves-effect waves-light red darken-1 hide-on-small-only"><i
+            <a href="#" class="btn-large waves-effect waves-light red darken-1 hide-on-small-only"><i
                     class="material-icons left">photo</i>
                 Kerwa 2018</a>&nbsp;
-            <a href="./wm-2018.html" class="btn-large waves-effect red darken-1 hide-on-small-only"><i
+            <a href="#" class="btn-large waves-effect red darken-1 hide-on-small-only"><i
                     class="material-icons left">photo</i>
                 WM 2018</a>
         </div>

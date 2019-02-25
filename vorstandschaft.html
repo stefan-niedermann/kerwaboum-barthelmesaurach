@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/grid-patch.css" />
     <style type="text/css">
         img {
             max-width: 100%;
@@ -24,24 +25,19 @@
         .primary-cta a {
             margin-top: 1rem;
         }
-
-        @media (max-width: 992px) {
-            .m6:nth-child(odd) {
-                clear: left;
-            }
-        }
     </style>
 
-    <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script defer type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script defer type="text/javascript" src="js/script.js"></script>
 </head>
 
 <body>
     <ul id="slide-out" class="sidenav">
-        <li><a class="waves-effect grey lighten-2" href="index.html"><i class="material-icons">home</i>Startseite</a>
+        <li><a class="waves-effect" href="index.html"><i class="material-icons">home</i>Startseite</a>
         </li>
         <li><a class="waves-effect" href="programm.html"><i class="material-icons">music_note</i>Programm</a></li>
-        <li><a class="waves-effect" href="vorstandschaft.html"><i class="material-icons">people</i>Vorstandschaft</a>
+        <li><a class="waves-effect grey lighten-2" href="vorstandschaft.html"><i class="material-icons">people</i>Vorstandschaft</a>
         </li>
         <li><a class="waves-effect" href="aufnahmeantrag.html"><i
                     class="material-icons">format_align_left</i>Aufnahmeantrag</a>
@@ -51,7 +47,7 @@
     <div class="navbar-fixed hide-on-large-only">
         <nav class="black">
             <a href="#" data-target="slide-out" class="sidenav-trigger">
-                <i class="material-icons left">menu</i> Drauracher Kerwa
+                <i class="material-icons left">menu</i> Menü
             </a>
         </nav>
     </div>
@@ -67,49 +63,78 @@
             </ul>
         </div>
     </nav>
-    <div class="section">
-        <h1 class="center">Vor&shy;stand&shy;schaft</h1>
-    </div>
+    <h1 class="section center">Vor&shy;stand&shy;schaft</h1>
     <div class="section">
         <div class="container">
             <div class="row">
                 <div class="col s12 m6 l3">
                     <h5>1. Vorsitzender</h5>
                     <img class="materialboxed" src="img/vorstandschaft/tobias-meermann.jpg" alt="Tobias Meermann" />
-                    <h6>Tobias Meermann</h6>
-                    <address>
-                        Mildach 3 <br />
-                        91126 Mildach<br />
-                        Mobil: <a href="tel:+49 152 53782503">+49 152 53782503</a><br />
-                        E-Mail: <a href="mailto:tobias.meermann@googlemail.com">tobias.meermann@googlemail.com</a>
+                    <p>
+                        <i class="material-icons left">person</i>
+                        <strong>Tobias Meermann</strong>
+                    </p>
+                    <address href="anreise.html">
+                        <i class="material-icons left">location_on</i>
+                        Mildach 3<br />
+                        91126 Mildach
                     </address>
+                    <p>
+                        <i class="material-icons left">smartphone</i>
+                        <a href="tel:+49 152 53782503">+49 152 53782503</a>
+                    </p>
+                    <p>
+                        <i class="material-icons left">email</i>
+                        <a href="mailto:tobias.meermann@gmail.com">tobias.meermann@gmail.com</a>
+                    </p>
                 </div>
                 <div class="col s12 m6 l3">
                     <h5>2. Vorsitzender</h5>
                     <img class="materialboxed" src="img/vorstandschaft/armin-feuerstein.jpg" alt="Armin Feuerstein" />
-                    <h6>Armin Feuerstein</h6>
+                    <p>
+                        <i class="material-icons left">person</i>
+                        <strong>Armin Feuerstein</strong>
+                    </p>
+                    <address href="anreise.html">
+                        <i class="material-icons left">location_on</i>
+                        91126 Günzersreuth
+                    </address>
                 </div>
                 <div class="col s12 m6 l3">
                     <h5>Kassier</h5>
                     <img class="materialboxed" src="img/vorstandschaft/kristina-kastner.jpg" alt="Kristina Kastner" />
-                    <h6>Kristina Kastner</h6>
-                    <address>
+
+                    <p>
+                        <i class="material-icons left">person</i>
+                        <strong>Kristina Kastner</strong>
+                    </p>
+                    <address href="anreise.html">
+                        <i class="material-icons left">location_on</i>
                         Rudelsdorfer Straße 20<br />
-                        91126 Barthelmesaurach<br>
-                        Telefon: <a href="tel:+49 9178 1571">+49 9178 1571</a><br />
-                        Mobil: <a href="tel:+49 157 73730009">+49 157 73730009</a>
+                        91126 Barthelmesaurach
                     </address>
+                    <p>
+                        <i class="material-icons left">smartphone</i>
+                        <a href="tel:+49 157 73730009">+49 157 73730009</a>
+                    </p>
+                    <p>
+                        <i class="material-icons left">phone</i>
+                        <a href="tel:+49 9178 1571">+49 9178 1571</a>
+                    </p>
                 </div>
                 <div class="col s12 m6 l3">
                     <h5>Schriftführer</h5>
                     <img class="materialboxed" src="img/vorstandschaft/ramona-holstein.jpg" alt="Ramona Holstein" />
-                    <h6>Ramona Holstein</h6>
+                    <p>
+                        <i class="material-icons left">person</i>
+                        <strong>Ramona Holstein</strong>
+                    </p>
                 </div>
             </div>
         </div>
         <div class="section center">
             <h5>Beisitzer</h5>
-            <p>Lukas Heyder, Anna Luschka</p>
+            <strong>Lukas Heyder, Anna Luschka</strong>
         </div>
     </div>
     <footer class="page-footer grey darken-4 white-text">
