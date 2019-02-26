@@ -22,8 +22,20 @@
             max-width: 100%;
         }
 
-        .primary-cta a {
-            margin-top: 1rem;
+        p.cta {
+            display: flex;
+        }
+        p.cta > * {
+            flex: 1 0 auto;
+        }
+        p.cta > :first-child {
+            margin-right: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .col.s12 {
+                margin-bottom: 2rem;
+            }
         }
     </style>
 
@@ -70,6 +82,12 @@
                 <div class="col s12 m6 l3">
                     <h5>1. Vorsitzender</h5>
                     <img class="materialboxed" src="img/vorstandschaft/tobias-meermann.jpg" alt="Tobias Meermann" />
+                    <p class="cta hide-on-med-and-up">
+                        <a href="tel:+49 152 53782503" class="btn-small waves-effect red darken-1"><i
+                            class="material-icons left">smartphone</i>Anrufen</a>
+                        <a href="mailto:tobias.meermann@gmail.com" class="btn-small waves-effect white red-text text-darken-1"><i
+                            class="material-icons left">email</i>E-Mail</a>
+                    </p>
                     <p>
                         <i class="material-icons left">person</i>
                         <strong>Tobias Meermann</strong>
@@ -79,11 +97,11 @@
                         Mildach 3<br />
                         91126 Mildach
                     </address>
-                    <p>
-                        <i class="material-icons left">smartphone</i>
-                        <a href="tel:+49 152 53782503">+49 152 53782503</a>
+                    <p class="hide-on-small-only">
+                        <i class="material-icons left" aria-hidden="true">smartphone</i>
+                        +49 152 53782503
                     </p>
-                    <p>
+                    <p class="hide-on-small-only" aria-hidden="true">
                         <i class="material-icons left">email</i>
                         <a href="mailto:tobias.meermann@gmail.com">tobias.meermann@gmail.com</a>
                     </p>
@@ -103,7 +121,12 @@
                 <div class="col s12 m6 l3">
                     <h5>Kassier</h5>
                     <img class="materialboxed" src="img/vorstandschaft/kristina-kastner.jpg" alt="Kristina Kastner" />
-
+                    <p class="cta hide-on-med-and-up">
+                        <a href="tel:+49 157 73730009" class="btn-small waves-effect red darken-1"><i
+                            class="material-icons left">smartphone</i>Mobil</a>
+                        <a href="tel:+49 9178 1571" class="btn-small waves-effect white red-text text-darken-1"><i
+                            class="material-icons left">phone</i>Festnetz</a>
+                    </p>
                     <p>
                         <i class="material-icons left">person</i>
                         <strong>Kristina Kastner</strong>
@@ -113,13 +136,13 @@
                         Rudelsdorfer Straße 20<br />
                         91126 Barthelmesaurach
                     </address>
-                    <p>
+                    <p class="hide-on-small-only" aria-hidden="true">
                         <i class="material-icons left">smartphone</i>
-                        <a href="tel:+49 157 73730009">+49 157 73730009</a>
+                        +49 157 73730009
                     </p>
-                    <p>
+                    <p class="hide-on-small-only" aria-hidden="true">
                         <i class="material-icons left">phone</i>
-                        <a href="tel:+49 9178 1571">+49 9178 1571</a>
+                        +49 9178 1571
                     </p>
                 </div>
                 <div class="col s12 m6 l3">
