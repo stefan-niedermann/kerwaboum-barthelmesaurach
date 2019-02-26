@@ -12,6 +12,15 @@ blockquote::before {
 blockquote::after {
     content: "\"";
 }
+blockquote cite {
+    font-style: italic;
+    float: right;
+    font-size: medium;
+}
+blockquote cite::before {
+    content: "\a— ";
+    white-space: pre;
+}
 
 header {
     margin-bottom: 1rem;
