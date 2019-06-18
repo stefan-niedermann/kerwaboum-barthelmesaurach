@@ -1,0 +1,14 @@
+ErrorDocument 404 /nicht-gefunden.html
+
+RewriteEngine on  
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+Redirect 301 /news/ /index.html
+Redirect 301 /veranstaltungen/ /index.html
+Redirect 301 /category/veranstaltungen/ /index.html
+Redirect 301 /wp-content/uploads/2017/06/Aufnahmeantrag.pdf /aufnahmeantrag.html
+Redirect 301 /vorstandschaft/ /vorstandschaft.html
+Redirect 301 /satzung/ /satzung.html
+Redirect 301 /impressum/ /impressum.html
+Redirect 301 /datenschutzerklaerung/ /datenschutzerklaerung.html
