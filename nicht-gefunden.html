@@ -7,16 +7,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#000000" />
-    <meta name="robots" content="noindex, nofollow" />
-    <meta name="description" content="Die angeforderte Seite konnte nicht gefunden werden. Sie haben die Möglichkeit, über die Navigation zurück zur Start- oder zu einer anderen Seite zu gelangen." />
+    <meta name="robots" content="index, follow" />
+    <meta name="description"
+        content="Die angeforderte Seite konnte nicht gefunden werden. Sie haben die Möglichkeit, über die Navigation zurück zur Start- oder zu einer anderen Seite zu gelangen." />
 
-    <base href="./" />
+    <base href="/" />
 
     <link rel="icon" type="image/png" href="/img/favicon.png" sizes="32x32" />
-    <link rel="canonical" href="https://beta.kerwaboum-barthelmesaurach.de/nicht-gefunden.html" />
+    <link rel="canonical" href="https://www.kerwaboum-barthelmesaurach.de/nicht-gefunden.html" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <style type="text/css">
         .section img {
             margin: 1rem 0 4rem 0;
@@ -25,7 +26,7 @@
 
     <script defer type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script defer type="text/javascript" src="js/script.js"></script>
+    <script defer type="text/javascript" src="/js/script.js"></script>
     <script type="application/ld+json">
         {
             "@context": "http://schema.org",
@@ -67,7 +68,7 @@
         "@type": "Organization",
         "name": "Kerwaboum Barthelmesaurach e. V.",
         "url": "https://kerwaboum-barthelmesaurach.de",
-        "logo": "https://www.kerwaboum-barthelmesaurach.de/wp-content/uploads/2014/05/wappen.png",
+        "logo": "https://www.kerwaboum-barthelmesaurach.de/img/wappen.png",
         "contactPoint": [
             {
                 "@type": "ContactPoint",
@@ -84,19 +85,35 @@
         ]
     }
     </script>
+    <!-- Matomo -->
+    <script type="text/javascript">
+        var _paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(["setCookieDomain", "*.www.kerwaboum-barthelmesaurach.de"]);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = "https://tracking.niedermann.it/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
+            _paq.push(['setSiteId', '8']);
+            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
 </head>
 
 <body>
     <ul id="slide-out" class="sidenav">
-        <li><a class="waves-effect" href="index.html"><i class="material-icons">home</i>Startseite</a>
+        <li><a class="waves-effect" href="/index.html"><i class="material-icons">home</i>Startseite</a>
         </li>
-        <li><a class="waves-effect" href="programm.html"><i class="material-icons">music_note</i>Programm</a></li>
-        <li><a class="waves-effect" href="vorstandschaft.html"><i class="material-icons">people</i>Vorstandschaft</a>
+        <li><a class="waves-effect" href="/programm.html"><i class="material-icons">music_note</i>Programm</a></li>
+        <li><a class="waves-effect" href="/vorstandschaft.html"><i class="material-icons">people</i>Vorstandschaft</a>
         </li>
-        <li><a class="waves-effect" href="aufnahmeantrag.html"><i
+        <li><a class="waves-effect" href="/aufnahmeantrag.html"><i
                     class="material-icons">format_align_left</i>Aufnahmeantrag</a>
         </li>
-        <li><a class="waves-effect" href="anreise.html"><i class="material-icons">map</i>Anreise</a></li>
+        <li><a class="waves-effect" href="/anreise.html"><i class="material-icons">map</i>Anreise</a></li>
     </ul>
     <div class="navbar-fixed hide-on-large-only">
         <nav class="black">
@@ -108,12 +125,12 @@
     <nav class="black hide-on-med-and-down">
         <div class="container">
             <ul>
-                <li><a class="waves-effect" href="index.html"><img src="img/favicon.png" alt="Wappen" />Startseite</a>
+                <li><a class="waves-effect" href="/index.html"><img src="/img/favicon.png" alt="Wappen" />Startseite</a>
                 </li>
-                <li><a class="waves-effect" href="programm.html">Programm</a></li>
-                <li><a class="waves-effect" href="vorstandschaft.html">Vorstandschaft</a></li>
-                <li><a class="waves-effect" href="aufnahmeantrag.html">Aufnahmeantrag</a></li>
-                <li><a class="waves-effect" href="anreise.html">Anreise</a></li>
+                <li><a class="waves-effect" href="/programm.html">Programm</a></li>
+                <li><a class="waves-effect" href="/vorstandschaft.html">Vorstandschaft</a></li>
+                <li><a class="waves-effect" href="/aufnahmeantrag.html">Aufnahmeantrag</a></li>
+                <li><a class="waves-effect" href="/anreise.html">Anreise</a></li>
             </ul>
         </div>
     </nav>
@@ -122,12 +139,12 @@
     </header>
     <div class="section center">
         <div class="container flow-text">
-            <p>Leider haben wir diese Seite nicht gefunden.</p>
+            <p>Diese Seite existiert leider nicht mehr.</p>
             <p>Möchten Sie stattdessen auf die <a href="/startseite.html">Startseite</a> gehen?</p>
         </div>
     </div>
     <div class="section center">
-        <img src="img/wappen.png" alt="Wappen der Kerwaboum Barthelmesaurach e. V." />
+        <img src="/img/wappen.png" alt="Wappen der Kerwaboum Barthelmesaurach e. V." />
     </div>
     <footer class="page-footer grey darken-4 white-text">
         <div class="container">
@@ -136,7 +153,7 @@
                     <h5>Adresse</h5>
                     <p><i class="material-icons left">home</i>Kerwaboum Barthelmesaurach e. V.</p>
                     <p><i class="material-icons left">person</i>1. Vorstand Tobias Meermann</p>
-                    <a href="anreise.html" class="white-text"><i class="material-icons left">location_on</i>
+                    <a href="/anreise.html" class="white-text"><i class="material-icons left">location_on</i>
                         <address>
                             Mildach 3<br />
                             91126 Mildach<br />
@@ -159,11 +176,11 @@
                     <h5>Info</h5>
 
                     <ul>
-                        <li><a href="satzung.html" class="waves-effect btn-flat white-text"><i
+                        <li><a href="/satzung.html" class="waves-effect btn-flat white-text"><i
                                     class="material-icons left">more_horiz</i>Satzung</a></li>
-                        <li><a href="impressum.html" class="waves-effect btn-flat white-text"><i
+                        <li><a href="/impressum.html" class="waves-effect btn-flat white-text"><i
                                     class="material-icons left">info</i>Impressum</a></li>
-                        <li><a href="datenschutzerklaerung.html" class="waves-effect btn-flat white-text truncate"><i
+                        <li><a href="/datenschutzerklaerung.html" class="waves-effect btn-flat white-text truncate"><i
                                     class="material-icons left">verified_user</i>Datenschutzerklärung</a></li>
                     </ul>
                 </div>
