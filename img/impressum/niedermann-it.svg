@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" sodipodi:docname="Niedermann-IT-Dienstleistungen.svg" width="545" height="100">
+	<metadata>
+		<rdf:RDF>
+			<cc:Work rdf:about="">
+				<dc:format>image/svg+xml</dc:format>
+				<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+			</cc:Work>
+		</rdf:RDF>
+	</metadata>
+	<title>Niedermann IT-Dienstleistungen</title>
+	<!-- Linkes Quadrat oben -->
+	<path d="M50 10 L70 30 L50 50 L10 50 Z" stroke-width="0" fill="#007676"/>
+	<!-- Linkes Quadrat unten -->
+	<path d="M50 50 L70 70 L50 90 L10 50 Z" stroke-width="0" fill="#008a8a"/>
+	<!-- Mittleres Quadrat oben -->
+	<path d="M95 10 L135 50 L55 50 Z" stroke-width="0" fill="#202020"/>
+	<!-- Mittleres Quadrat unten -->
+	<path d="M135 50 L95 90 L55 50 Z" stroke-width="0" fill="#232323"/>
+	<text style="cursor: text;" xml:space="preserve" text-anchor="middle" font-size="40" x="95" y="65" stroke-opacity="null" id="text18" font-family="Helvetica, Arial, sans-serif" stroke-width="0" fill="#fff">N</text>
+	<!-- Rechtes Quadrat oben -->
+	<path d="M140 10 L180 50 L140 50 L120 30 Z" stroke-width="0" fill="#006b6b"/>
+	<!-- Rechtes Quadrat unten -->
+	<path d="M180 50 L140 90 L120 70 L140 50 Z" stroke-width="0" fill="#007877"/>
+	<!-- NIEDERMANN -->
+	<text style="cursor: text;" xml:space="preserve" text-anchor="middle" font-size="50" y="50" x="367.5" font-family="Helvetica, Arial, sans-serif" stroke-width="0" stroke="#000" fill="#000000">NIEDERMANN</text>
+	<!-- Trennlinie -->
+	<line x1="200" y1="60" x2="535" y2="60" stroke-width="2" stroke="#000" fill="none"/>
+	<!-- IT-DIENSTLEISTUNGEN -->
+	<text style="cursor: text;" xml:space="preserve" text-anchor="middle" font-size="29.7" x="367.5" y="90" stroke-opacity="null" font-family="Helvetica, Arial, sans-serif" stroke-width="0" stroke="#000" fill="#000000">IT-DIENSTLEISTUNGEN</text>
+</svg>
