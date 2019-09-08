@@ -70,7 +70,7 @@
             timer = document.createElement('div');
             timer.setAttribute('class', 'timer red darken-2 white-text');
             document.body.appendChild(timer);
-            endDate = new Date(startDate.getFullYear() + '-08-16').getTime();
+            endDate = new Date('2020-08-21').getTime();
             var interval = setInterval(calculate, 1000);
             function calculate() {
                 var timeRemaining = parseInt((endDate - new Date().getTime()) / 1000);
