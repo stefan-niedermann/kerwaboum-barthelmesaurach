@@ -2,58 +2,54 @@
 <html lang="de" prefix="og: http://ogp.me/ns#">
 
 <head>
-    <title>Vorstandschaft - Kerwaboum Barthelmesaurach</title>
+    <title>Einladung zur JHV - Kerwaboum Barthelmesaurach</title>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#000000" />
     <meta name="robots" content="index, follow" />
     <meta name="description"
-        content="Informationen und Kontaktmöglichkeiten zum 1. und 2. Vorsitzenden, Kassier & Schriftführer sowie den 3 Beisitzern." />
+        content="Vereinsmitglieder erhalten hier Informationen zur Jahreshauptversammlung des Vereins, bei dem Berichte gehört, Anträge eingereicht und die Vorstandschaft entlastet wird." />
 
     <base href="./" />
 
     <link rel="icon" type="image/png" href="/img/favicon.png" sizes="32x32" />
-    <link rel="canonical" href="https://www.kerwaboum-barthelmesaurach.de/vorstandschaft.html" />
+    <link rel="canonical" href="https://www.kerwaboum-barthelmesaurach.de/einladung-zur-jhv.html" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/grid-patch.css" />
     <style type="text/css">
-        img {
-            max-width: 100%;
-        }
-
-        img.materialboxed {
+        iframe {
             width: 100%;
-        }
-
-        :not(footer) h5 {
-            white-space: nowrap;
-        }
-
-        p.cta {
-            display: flex;
-        }
-
-        p.cta>* {
-            flex: 1 0 auto;
-        }
-
-        p.cta> :first-child {
-            margin-right: 1rem;
-        }
-
-        @media (max-width: 600px) {
-            .col.s12 {
-                margin-bottom: 2rem;
-            }
+            height: 80vh;
         }
     </style>
 
     <script defer type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script defer type="text/javascript" src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
     <script defer type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.js';
+            var loadingTask = pdfjsLib.getDocument('./docs/Einladung-zur-JHV.pdf');
+            loadingTask.promise.then(function (pdf) {
+                pdf.getPage(1).then(function (page) {
+                    var scale = 1.5;
+                    var viewport = page.getViewport({ scale: scale, });
+                    var canvas = document.getElementById('einladung-zur-jhv');
+                    var context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+                    var renderContext = {
+                        canvasContext: context,
+                        viewport: viewport,
+                    };
+                    page.render(renderContext);
+                });
+            });
+        });
+    </script>
     <script type="application/ld+json">
         {
             "@context": "http://schema.org",
@@ -111,7 +107,8 @@
             }
         ]
     }
-    </script><!-- Matomo -->
+    </script>
+    <!-- Matomo -->
     <script type="text/javascript">
         var _paq = window._paq || [];
         /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
@@ -135,13 +132,12 @@
         <li><a class="waves-effect" href="index.html"><i class="material-icons">home</i>Startseite</a>
         </li>
         <li><a class="waves-effect" href="programm.html"><i class="material-icons">music_note</i>Programm</a></li>
-        <li><a class="waves-effect grey lighten-2" href="vorstandschaft.html"><i
-                    class="material-icons">people</i>Vorstandschaft</a>
+        <li><a class="waves-effect" href="vorstandschaft.html"><i class="material-icons">people</i>Vorstandschaft</a>
         </li>
         <li><a class="waves-effect" href="aufnahmeantrag.html"><i
                     class="material-icons">format_align_left</i>Aufnahmeantrag</a>
         </li>
-        <li><a class="waves-effect" href="einladung-zur-jhv.html"><i class="material-icons">chat_bubble</i>JHV</a></li>
+        <li><a class="waves-effect grey lighten-2" href="einladung-zur-jhv.html"><i class="material-icons">chat_bubble</i>JHV</a></li>
         <li><a class="waves-effect" href="anreise.html"><i class="material-icons">map</i>Anreise</a></li>
         <li><a class="subheader">Rechtliches</a></li>
         <li><a class="waves-effect" href="impressum.html"><i class="material-icons">info</i>Impressum</a></li>
@@ -160,124 +156,25 @@
                 <li><a class="waves-effect" href="index.html"><img src="img/favicon.png" alt="Wappen" />Startseite</a>
                 </li>
                 <li><a class="waves-effect" href="programm.html">Programm</a></li>
-                <li><a class="waves-effect grey darken-4" href="vorstandschaft.html">Vorstandschaft</a></li>
+                <li><a class="waves-effect" href="vorstandschaft.html">Vorstandschaft</a></li>
                 <li><a class="waves-effect" href="aufnahmeantrag.html">Aufnahmeantrag</a></li>
-                <li><a class="waves-effect" href="einladung-zur-jhv.html">JHV</a></li>
+                <li><a class="waves-effect grey darken-4" href="einladung-zur-jhv.html">JHV</a></li>
                 <li><a class="waves-effect" href="anreise.html">Anreise</a></li>
             </ul>
         </div>
     </nav>
-    <h1 class="section center">Vor&shy;stand&shy;schaft</h1>
-    <div class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col s12 m6 l3">
-                    <h5>1. Vorsitzender</h5>
-                    <img class="materialboxed" src="img/vorstandschaft/tobias-meermann.jpg" alt="Tobias Meermann" />
-                    <p class="cta hide-on-med-and-up">
-                        <a href="tel:+49 152 53782503" class="btn-small waves-effect red darken-1"><i
-                                class="material-icons left">smartphone</i>Anrufen</a>
-                        <a href="mailto:tobiasmeermann@gmail.com"
-                            class="btn-small waves-effect white red-text text-darken-1"><i
-                                class="material-icons left">email</i>E-Mail</a>
-                    </p>
-                    <p>
-                        <i class="material-icons left">person</i>
-                        <strong>Tobias Meermann</strong>
-                    </p>
-                    <address href="anreise.html">
-                        <i class="material-icons left">location_on</i>
-                        Mildach 3<br />
-                        91126 Mildach
-                    </address>
-                    <p class="hide-on-small-only">
-                        <i class="material-icons left" aria-hidden="true">smartphone</i>
-                        +49 152 53782503
-                    </p>
-                    <p class="hide-on-small-only" aria-hidden="true">
-                        <i class="material-icons left">email</i>
-                        <a href="mailto:tobiasmeermann@gmail.com">tobiasmeermann@gmail.com</a>
-                    </p>
-                </div>
-                <div class="col s12 m6 l3">
-                    <h5>2. Vorsitzender</h5>
-                    <img class="materialboxed" src="img/vorstandschaft/armin-feuerstein.jpg" alt="Armin Feuerstein" />
-                    <p>
-                        <i class="material-icons left">person</i>
-                        <strong>Armin Feuerstein</strong>
-                    </p>
-                    <address href="anreise.html">
-                        <i class="material-icons left">location_on</i>
-                        91126 Günzersreuth
-                    </address>
-                </div>
-                <div class="col s12 m6 l3">
-                    <h5>Kassier</h5>
-                    <img class="materialboxed" src="img/vorstandschaft/anna-luschka.jpg" alt="Anna Luschka" />
-                    <p class="cta hide-on-med-and-up">
-                        <a href="tel:+49 157 55292575" class="btn-small waves-effect red darken-1"><i
-                                class="material-icons left">smartphone</i>Mobil</a>
-                        <a href="tel:+49 9178 468" class="btn-small waves-effect white red-text text-darken-1"><i
-                                class="material-icons left">phone</i>Festnetz</a>
-                    </p>
-                    <p>
-                        <i class="material-icons left">person</i>
-                        <strong>Anna Luschka</strong>
-                    </p>
-                    <address href="anreise.html">
-                        <i class="material-icons left">location_on</i>
-                        Nördlinger Straße 22<br />
-                        91126 Barthelmesaurach
-                    </address>
-                    <p class="hide-on-small-only" aria-hidden="true">
-                        <i class="material-icons left">smartphone</i>
-                        +49 157 55292575
-                    </p>
-                    <p class="hide-on-small-only" aria-hidden="true">
-                        <i class="material-icons left">phone</i>
-                        +49 9178 468
-                    </p>
-                </div>
-                <div class="col s12 m6 l3">
-                    <h5>Schriftführer</h5>
-                    <img class="materialboxed" src="img/vorstandschaft/ramona-holstein.jpg" alt="Ramona Holstein" />
-                    <p>
-                        <i class="material-icons left">person</i>
-                        <strong>Ramona Holstein</strong>
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12 xl6 offset-xl3">
-                    <div class="row">
-                            <div class="col s12 m4">
-                                    <h5>1. Beisitzer</h5>
-                                    <img class="materialboxed" src="img/vorstandschaft/lukas-heyder.jpg" alt="Ramona Holstein" />
-                                    <p>
-                                        <i class="material-icons left">person</i>
-                                        <strong>Lukas Heyder</strong>
-                                    </p>
-                            </div>
-                            <div class="col s12 m4">
-                                    <h5>2. Beisitzer</h5>
-                                    <img class="materialboxed" src="img/vorstandschaft/melanie-schug.jpg" alt="Ramona Holstein" />
-                                    <p>
-                                        <i class="material-icons left">person</i>
-                                        <strong>Melanie Schug</strong>
-                                    </p>
-                            </div>
-                        <div class="col s12 m4">
-                                <h5>3. Beisitzer</h5>
-                                <img class="materialboxed" src="img/vorstandschaft/adrian-koch.jpg" alt="Ramona Holstein" />
-                                <p>
-                                    <i class="material-icons left">person</i>
-                                    <strong>Adrian Koch</strong>
-                                </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <header class="section center">
+        <h1>Einladung zur JHV</h1>
+        <p>
+            <a href="./docs/Einladung-zur-JHV.pdf" download class="btn-large waves-effect waves-light red darken-1"><i
+                    class="material-icons left">arrow_downward</i>
+                PDF herunterladen</a>&nbsp;
+        </p>
+    </header>
+    <div class="section center">
+        <a href="./docs/Einladung-zur-JHV.pdf" download>
+            <canvas class="z-depth-1" id="einladung-zur-jhv"></canvas>
+        </a>
     </div>
     <footer class="page-footer grey darken-4 white-text">
         <div class="container">
@@ -307,7 +204,6 @@
                 </div>
                 <div class="col s12 m6 l4">
                     <h5>Info</h5>
-
                     <ul>
                         <li><a href="satzung.html" class="waves-effect btn-flat white-text"><i
                                     class="material-icons left">more_horiz</i>Satzung</a></li>

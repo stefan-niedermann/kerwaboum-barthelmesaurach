@@ -37,7 +37,7 @@
                 pdf.getPage(1).then(function (page) {
                     var scale = 1.5;
                     var viewport = page.getViewport({ scale: scale, });
-                    var canvas = document.getElementById('the-canvas');
+                    var canvas = document.getElementById('aufnahmeantrag');
                     var context = canvas.getContext('2d');
                     canvas.height = viewport.height;
                     canvas.width = viewport.width;
@@ -137,6 +137,7 @@
         <li><a class="waves-effect grey lighten-2" href="aufnahmeantrag.html"><i
                     class="material-icons">format_align_left</i>Aufnahmeantrag</a>
         </li>
+        <li><a class="waves-effect" href="einladung-zur-jhv.html"><i class="material-icons">chat_bubble</i>JHV</a></li>
         <li><a class="waves-effect" href="anreise.html"><i class="material-icons">map</i>Anreise</a></li>
         <li><a class="subheader">Rechtliches</a></li>
         <li><a class="waves-effect" href="impressum.html"><i class="material-icons">info</i>Impressum</a></li>
@@ -157,12 +158,13 @@
                 <li><a class="waves-effect" href="programm.html">Programm</a></li>
                 <li><a class="waves-effect" href="vorstandschaft.html">Vorstandschaft</a></li>
                 <li><a class="waves-effect grey darken-4" href="aufnahmeantrag.html">Aufnahmeantrag</a></li>
+                <li><a class="waves-effect" href="einladung-zur-jhv.html">JHV</a></li>
                 <li><a class="waves-effect" href="anreise.html">Anreise</a></li>
             </ul>
         </div>
     </nav>
     <header class="section center">
-        <h1 class="">Auf&shy;nahme&shy;an&shy;trag</h1>
+        <h1>Auf&shy;nahme&shy;an&shy;trag</h1>
         <p>
             <a href="./docs/Aufnahmeantrag.pdf" download class="btn-large waves-effect waves-light red darken-1"><i
                     class="material-icons left">arrow_downward</i>
@@ -171,7 +173,7 @@
     </header>
     <div class="section center">
         <a href="./docs/Aufnahmeantrag.pdf" download>
-            <canvas class="z-depth-1" id="the-canvas"></canvas>
+            <canvas class="z-depth-1" id="aufnahmeantrag"></canvas>
         </a>
     </div>
     <footer class="page-footer grey darken-4 white-text">
@@ -202,7 +204,6 @@
                 </div>
                 <div class="col s12 m6 l4">
                     <h5>Info</h5>
-
                     <ul>
                         <li><a href="satzung.html" class="waves-effect btn-flat white-text"><i
                                     class="material-icons left">more_horiz</i>Satzung</a></li>
