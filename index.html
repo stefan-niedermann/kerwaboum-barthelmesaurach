@@ -33,7 +33,7 @@
         header {
             padding-bottom: 4rem;
             position: relative;
-            margin-bottom: 3rem;
+            /* margin-bottom: 3rem; */
         }
 
         header a {
@@ -70,7 +70,7 @@
             timer = document.createElement('div');
             timer.setAttribute('class', 'timer red darken-2 white-text');
             document.body.appendChild(timer);
-            endDate = new Date('2020-08-21').getTime();
+            endDate = new Date('2021-08-20').getTime();
             var interval = setInterval(calculate, 1000);
             function calculate() {
                 var timeRemaining = parseInt((endDate - new Date().getTime()) / 1000);
@@ -179,11 +179,12 @@
         <li><a class="waves-effect" href="aufnahmeantrag.html"><i
                     class="material-icons">format_align_left</i>Aufnahmeantrag</a>
         </li>
-        <li><a class="waves-effect" href="einladung-zur-jhv.html"><i class="material-icons">chat_bubble</i>JHV</a></li>
+        <!-- <li><a class="waves-effect" href="einladung-zur-jhv.html"><i class="material-icons">chat_bubble</i>JHV</a></li> -->
         <li><a class="waves-effect" href="anreise.html"><i class="material-icons">map</i>Anreise</a></li>
         <li><a class="subheader">Rechtliches</a></li>
         <li><a class="waves-effect" href="impressum.html"><i class="material-icons">info</i>Impressum</a></li>
-        <li><a class="waves-effect" href="datenschutzerklaerung.html"><i class="material-icons">verified_user</i>Datenschutzerklärung</a></li>
+        <li><a class="waves-effect" href="datenschutzerklaerung.html"><i
+                    class="material-icons">verified_user</i>Datenschutzerklärung</a></li>
     </ul>
     <div class="navbar-fixed hide-on-large-only">
         <nav class="black">
@@ -201,7 +202,7 @@
                 <li><a class="waves-effect" href="programm.html">Programm</a></li>
                 <li><a class="waves-effect" href="vorstandschaft.html">Vorstandschaft</a></li>
                 <li><a class="waves-effect" href="aufnahmeantrag.html">Aufnahmeantrag</a></li>
-                <li><a class="waves-effect" href="einladung-zur-jhv.html">JHV</a></li>
+                <!-- <li><a class="waves-effect" href="einladung-zur-jhv.html">JHV</a></li> -->
                 <li><a class="waves-effect" href="anreise.html">Anreise</a></li>
             </ul>
         </div>
@@ -209,10 +210,27 @@
     <header class="section center grey darken-4 white-text">
         <h1>Kerwa&shy;boum Barthel&shy;mesaurach</h1>
         <h4 class="hide-on-small-only">Auf geht’s zur Drauracher Kerwa!</h4>
-        <a href="einladung-zur-jhv.html" class="btn-large waves-effect waves-light red darken-1">
+        <a href="einladung-zur-jhv.html" style="visibility: hidden;"
+            class="btn-large waves-effect waves-light red darken-1">
             Einladung zur JHV 2020 <i class="material-icons right">send</i></a>
     </header>
     <div class="section">
+        <div class="container center flow-text">
+            <div class="row">
+                <div class="col s12">
+                    <div class="red darken-2 white-text" style="padding: .5rem">
+                        <p>Liebe Kerwafreunde,</p>
+                        <p>
+                            leider müssen auch wir coronabedingt die Drauracher Kerwa 2020 absagen.<br />
+                            Wir freuen uns wenn Ihr uns dafür vom 🗓 20.08.2021 bis 23.08.2021 wieder zahlreich besuchen
+                            kommt.<br />
+                            Bleibt alle gesund 🙂
+                        </p>
+                        <p>Bis nächstes Jahr Eure Drauracher Kerwaboum und Madli 👋🏼</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col s12 m4">

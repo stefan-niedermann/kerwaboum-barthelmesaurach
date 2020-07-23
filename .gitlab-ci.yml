@@ -8,7 +8,8 @@ deploy_job:
     - rm .gitlab-ci.yml
     - rm -rf .git
     - apt-get update
-    - apt-get --yes --force-yes install lftp
+    - apt-get --yes --force-yes install imagemagick lftp
+    - find ./img/aufnahmeantrag/ -name '*' -exec mogrify -resize 1280x1280 -quality 100\> {} \;
     - lftp -u $FTP_PRODUCTION_USER,$FTP_PRODUCTION_PASSWORD -e "set ssl:verify-certificate no;mirror $FTP_PRODUCTION_PATH/.well-known ./; mirror -R ./ $FTP_PRODUCTION_PATH-$CI_COMMIT_SHA; rm -r $FTP_PRODUCTION_PATH-alt; mv $FTP_PRODUCTION_PATH $FTP_PRODUCTION_PATH-alt; mv $FTP_PRODUCTION_PATH-$CI_COMMIT_SHA $FTP_PRODUCTION_PATH; quit;" $FTP_PRODUCTION_URL
   only:
     - master
