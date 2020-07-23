@@ -1,3 +1,26 @@
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(material-icons.woff2) format('woff2');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
+}
+
 img, video, canvas {
     max-width: 100%;
     height: auto;
@@ -7,17 +30,21 @@ blockquote {
     font-style: italic;
     border-left: 0;
 }
+
 blockquote::before {
     content: "\"";
 }
+
 blockquote::after {
     content: "\"";
 }
+
 blockquote cite {
     font-style: italic;
     float: right;
     font-size: medium;
 }
+
 blockquote cite::before {
     content: "\a— ";
     white-space: pre;
@@ -27,12 +54,13 @@ header {
     margin-bottom: 1rem;
 }
 
-body > nav {
+body>nav {
     position: sticky;
     top: 0;
     z-index: 2;
 }
-body > nav a.waves-effect {
+
+body>nav a.waves-effect {
     display: block;
 }
 
@@ -42,11 +70,11 @@ body > nav a.waves-effect {
 }
 
 ::-moz-selection {
-	background: #E53935;
-	color: #fff;
+    background: #E53935;
+    color: #fff;
 }
 
 ::selection {
-	background: #E53935;
-	color: #fff;
+    background: #E53935;
+    color: #fff;
 }
