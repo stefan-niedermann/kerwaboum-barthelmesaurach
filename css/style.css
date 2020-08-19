@@ -64,6 +64,11 @@ body>nav a.waves-effect {
     display: block;
 }
 
+.sidenav .user-view .circle {
+    border-radius: 0;
+    width: auto;
+}
+
 .container li:first-child img {
     vertical-align: middle;
     margin-right: .5rem;
