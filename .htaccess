@@ -4,6 +4,7 @@ ErrorDocument 404 /nicht-gefunden.html
 #RewriteCond %{HTTP_HOST} !^www\.
 #RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
 
+Redirect 301 /draurach.de /index.html
 Redirect 301 /news/ /index.html
 Redirect 301 /veranstaltungen/ /index.html
 Redirect 301 /category/veranstaltungen/ /index.html

@@ -29,6 +29,7 @@ img, video, canvas {
 blockquote {
     font-style: italic;
     border-left: 0;
+    margin-top: 2rem;
 }
 
 blockquote::before {
