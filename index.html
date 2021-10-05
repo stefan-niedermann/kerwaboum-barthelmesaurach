@@ -63,33 +63,35 @@
     <script defer type="text/javascript" src="./js/materialize-1.0.0.min.js"></script>
     <script defer type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function () {
-            var days, hours, minutes, seconds, timer;
-            var startDate = new Date();
-            timer = document.createElement('div');
-            timer.setAttribute('class', 'timer red darken-2 white-text');
-            document.body.appendChild(timer);
-            endDate = new Date('2022-08-19').getTime();
-            var interval = setInterval(calculate, 1000);
-            function calculate() {
-                var timeRemaining = parseInt((endDate - new Date().getTime()) / 1000);
-                if (timeRemaining >= 0) {
-                    days = parseInt(timeRemaining / 86400);
-                    timeRemaining = (timeRemaining % 86400);
-                    hours = parseInt(timeRemaining / 3600);
-                    timeRemaining = (timeRemaining % 3600);
-                    minutes = parseInt(timeRemaining / 60);
-                    timeRemaining = (timeRemaining % 60);
-                    seconds = parseInt(timeRemaining);
-                    timer.innerText = days + ' Tage, ' + hours + ' Stunden, ' + minutes + ' Minuten, ' + seconds + ' Sekunden';
-                } else {
-                    timer.remove();
-                    clearInterval(interval);
-                    return;
-                }
-            };
-            calculate();
-        });
+        try {
+            document.addEventListener('DOMContentLoaded', () => {
+                const timer = document.createElement('div');
+                timer.setAttribute('class', 'timer red darken-2 white-text');
+                document.body.appendChild(timer);
+                endDate = new Date('2022-08-19').getTime();
+                const interval = setInterval(calculate, 1000);
+                function calculate() {
+                    let timeRemaining = parseInt((endDate - new Date().getTime()) / 1000);
+                    if (timeRemaining >= 0) {
+                        const days = parseInt(timeRemaining / 86400);
+                        timeRemaining = (timeRemaining % 86400);
+                        const hours = parseInt(timeRemaining / 3600);
+                        timeRemaining = (timeRemaining % 3600);
+                        const minutes = parseInt(timeRemaining / 60);
+                        timeRemaining = (timeRemaining % 60);
+                        const seconds = parseInt(timeRemaining);
+                        timer.innerText = days + ' Tage, ' + hours + ' Stunden, ' + minutes + ' Minuten, ' + seconds + ' Sekunden';
+                    } else {
+                        timer.remove();
+                        clearInterval(interval);
+                        return;
+                    }
+                };
+                calculate();
+            });
+        } catch (e) {
+            console.error(e);
+        }
     </script>
     <script type="application/ld+json">
         {
@@ -170,12 +172,14 @@
 <body>
     <ul id="slide-out" class="sidenav">
         <li class="black">
-			<div class="user-view">
-				<img class="circle" src="img/wappen.png">
-				<span class="white-text name">Kerwaboum Barthelmesaurach e. V.</span>
-				<span class="white-text email">ab 2022 wieder für euch da<!--Auf geht’s zur Drauracher Kerwa!--></span>
-    		</div>
-		</li>
+            <div class="user-view">
+                <img class="circle" src="img/wappen.png">
+                <span class="white-text name">Kerwaboum Barthelmesaurach e. V.</span>
+                <span class="white-text email">ab 2022 wieder für euch da
+                    <!--Auf geht’s zur Drauracher Kerwa!-->
+                </span>
+            </div>
+        </li>
         <li><a class="waves-effect grey lighten-2" href="index.html"><i class="material-icons">home</i>Startseite</a>
         </li>
         <li><a class="waves-effect" href="programm.html"><i class="material-icons">music_note</i>Programm</a></li>
@@ -214,9 +218,10 @@
     </nav>
     <header class="section center grey darken-4 white-text">
         <h1>Kerwa&shy;boum Barthel&shy;mesaurach</h1>
-        <h4 class="hide-on-small-only">ab 2022 wieder für euch da<!--Auf geht’s zur Drauracher Kerwa!--></h4>
-        <a href="einladung-zur-jhv.html"
-            class="btn-large waves-effect waves-light red darken-1">
+        <h4 class="hide-on-small-only">ab 2022 wieder für euch da
+            <!--Auf geht’s zur Drauracher Kerwa!-->
+        </h4>
+        <a href="einladung-zur-jhv.html" class="btn-large waves-effect waves-light red darken-1">
             Einladung zur JHV 2021 <i class="material-icons right">send</i></a>
     </header>
     <div class="section grey lighten-3" style="margin-bottom: 1.5rem;">
@@ -226,7 +231,8 @@
                     <p>Liebe Kerwafreunde,</p>
                     <p>
                         leider müssen auch wir coronabedingt die Drauracher Kerwa 2021 <strong>absagen</strong>.<br />
-                        Wir freuen uns wenn Ihr uns dafür vom 🗓 <strong>19.08.2022 bis 22.08.2022</strong> wieder zahlreich besuchen
+                        Wir freuen uns wenn Ihr uns dafür vom 🗓 <strong>19.08.2022 bis 22.08.2022</strong> wieder
+                        zahlreich besuchen
                         kommt.<br />
                         Bleibt alle gesund 🙂
                     </p>
@@ -241,7 +247,8 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 m4">
-                    <img class="materialboxed" src="img/startseite/baumstellen-2015.jpg" loading="lazy" alt="Baumstellen 2015" />
+                    <img class="materialboxed" src="img/startseite/baumstellen-2015.jpg" loading="lazy"
+                        alt="Baumstellen 2015" />
                     <h5>Drauracher Kerwa 🍻</h5>
                     <p>
                         Ein besonderes Highlight jedes Jahr ist die Kerwa in Barthelmesaurach. Aufgrund der schönen Lage
@@ -251,7 +258,8 @@
                         jetzt schon wieder freuen.</p>
                 </div>
                 <div class="col s12 m4">
-                    <img class="materialboxed" src="img/startseite/fischerstechen.jpg" loading="lazy" alt="Fischerstechen" />
+                    <img class="materialboxed" src="img/startseite/fischerstechen.jpg" loading="lazy"
+                        alt="Fischerstechen" />
                     <h5>Traditionelles Fischerstechen 🏅</h5>
                     <p>
                         Ein Höhepunkt unserer Kerwa sind die Kerwaspiele in und um die Aurach. Hier können jedes Jahr
