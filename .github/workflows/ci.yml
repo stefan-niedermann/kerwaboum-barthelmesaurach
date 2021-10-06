@@ -11,11 +11,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install dependencies
-        run: sudo apt-get install imagemagick lftp
+        run: |
+          npm ci
+          sudo apt-get install imagemagick lftp
       - name: Compress images
         run: find ./img/aufnahmeantrag/ -name '*' -exec mogrify -resize 1024x1024 -quality 100\> {} \;
       - name: Remove unnecessary files
-        run: rm -r .github .git
+        run: rm -r .github .git .gitignore package.json package-lock.json
       - name: Pull .well-known
         continue-on-error: true
         run: lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate no; mirror .well-known ./; quit;" ${{ secrets.FTP_URL }}

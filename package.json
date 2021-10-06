@@ -1,0 +1,25 @@
+{
+  "name": "kerwaboum-barthelmesaurach",
+  "version": "1.0.0",
+  "description": "Website der Kerwaboum Barthelmesaurach e. V.",
+  "main": "single.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefan-niedermann/kerwaboum-barthelmesaurach.git"
+  },
+  "keywords": [
+    "materializecss",
+    "materialize"
+  ],
+  "author": "Stefan Niedermann",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/stefan-niedermann/kerwaboum-barthelmesaurach/issues"
+  },
+  "homepage": "https://kerwaboum-barthelmesaurach.de",
+  "dependencies": {
+    "@materializecss/materialize": "^1.1.0-alpha",
+    "material-icons": "^1.8.1"
+  }
+}
