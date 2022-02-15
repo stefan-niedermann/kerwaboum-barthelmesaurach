@@ -82,7 +82,15 @@
                         const minutes = parseInt(timeRemaining / 60);
                         timeRemaining = (timeRemaining % 60);
                         const seconds = parseInt(timeRemaining);
-                        timer.innerText = days + ' Tage, ' + hours + ' Stunden, ' + minutes + ' Minuten, ' + seconds + ' Sekunden';
+                        if (days > 30) {
+                            timer.innerText = days + ' Tage';
+                        } else if (days > 14) {
+                            timer.innerText = days + ' Tage, ' + hours + ' Stunden';
+                        } else if (days > 7) {
+                            timer.innerText = days + ' Tage, ' + hours + ' Stunden, ' + minutes + ' Minuten';
+                        } else {
+                            timer.innerText = days + ' Tage, ' + hours + ' Stunden, ' + minutes + ' Minuten, ' + seconds + ' Sekunden';
+                        }
                     } else {
                         timer.remove();
                         clearInterval(interval);
