@@ -69,26 +69,36 @@
                 const timer = document.createElement('div');
                 timer.setAttribute('class', 'timer red darken-2 white-text');
                 document.body.appendChild(timer);
-                endDate = new Date('2023-08-18').getTime();
-                const interval = setInterval(calculate, 1000);
+
+                const getKerwaStart = () => {
+                    const currentYear = new Date().getFullYear();
+                    const date = new Date(currentYear, 8, 1, 12);
+                    let weekday = date.getDay();
+                    let dayDiff = weekday === 0 ? 7 : weekday;
+                    let lastSunday = date.setDate(date.getDate() - dayDiff - 7 - 2);
+                    return date;
+                }
+
+                const endDate = getKerwaStart().getTime();
+                const interval = setInterval(calculate, 1_000);
                 function calculate() {
                     let timeRemaining = parseInt((endDate - new Date().getTime()) / 1000);
                     if (timeRemaining >= 0) {
-                        const days = parseInt(timeRemaining / 86400);
-                        timeRemaining = (timeRemaining % 86400);
+                        const days = parseInt(timeRemaining / 86_400);
+                        timeRemaining = (timeRemaining % 86_400);
                         const hours = parseInt(timeRemaining / 3600);
-                        timeRemaining = (timeRemaining % 3600);
+                        timeRemaining = (timeRemaining % 3_600);
                         const minutes = parseInt(timeRemaining / 60);
                         timeRemaining = (timeRemaining % 60);
                         const seconds = parseInt(timeRemaining);
                         if (days > 30) {
-                            timer.innerText = days + ' Tage';
+                            timer.innerText = `${days} Tage`;
                         } else if (days > 14) {
-                            timer.innerText = days + ' Tage, ' + hours + ' Stunden';
+                            timer.innerText =`${days} Tage, ${hours} Stunden`;
                         } else if (days > 7) {
-                            timer.innerText = days + ' Tage, ' + hours + ' Stunden, ' + minutes + ' Minuten';
+                            timer.innerText = `${days} Tage, ${hours} Stunden, ${minutes} Minuten`;
                         } else {
-                            timer.innerText = days + ' Tage, ' + hours + ' Stunden, ' + minutes + ' Minuten, ' + seconds + ' Sekunden';
+                            timer.innerText = `${days} Tage, ${hours} Stunden, ${minutes} Minuten, ${seconds} Sekunden`;
                         }
                     } else {
                         timer.remove();
