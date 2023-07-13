@@ -1,0 +1,42 @@
+html {
+	--background-color: white !important;
+	--background-color-accent: #ccc !important;
+	--background-color-emphasized: #eee !important;
+	--background-color-tag: #e5e5e5 !important;
+	--background-color-selection: #007676;
+	--color-selection: white;
+	--color: #000 !important;
+	--color-accent: white !important;
+	--border-color: white !important;
+	--box-shadow-cards: none !important;
+
+	--max-width-container: 100vw;
+}
+
+
+.carousel {
+	flex-wrap: wrap !important;
+}
+
+.carousel article {
+	flex: 0 0 100% !important;
+}
+
+a::after {
+	content: " (" attr(href) ")"
+}
+
+img {
+	page-break-inside: avoid;
+	max-height: 95vh;
+	max-width: 100%;
+	width: auto;
+}
+
+section {
+	page-break-inside: avoid;
+}
+
+video {
+	display: none;
+}

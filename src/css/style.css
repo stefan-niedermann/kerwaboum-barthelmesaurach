@@ -1,0 +1,493 @@
+@font-face {
+	font-family: 'Kerwaboum Headline';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../fonts/bg.woff2) format('woff2');
+}
+
+html {
+	--background-color: #f5f5f5;
+	--background-color-accent: #d50d17;
+	--background-color-emphasized: white;
+	--background-color-tag: var(--background-color);
+	--background-color-selection: #d50d17;
+	--color-selection: white;
+	--color: #333;
+	--color-accent: white;
+	--border-color: #ccc;
+	--box-shadow-cards: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	--color-scrollbar-thumb: var(--border-color);
+
+	--font-stack-headline: 'Kerwaboum Headline', Bahnschrift, Calibri, sans-serif;
+	--font-stack-body: "Open Sans", "Segoe UI", Tahoma, sans-serif;
+	--max-width-container: 1440px;
+	--border-radius: .125rem;
+
+	scrollbar-width: thin;
+	scrollbar-color: var(--color-scrollbar-thumb) var(--background-color);
+}
+
+@media (prefers-color-scheme: dark) {
+	html {
+		--background-color: #111;
+		--background-color-accent: #d50d17;
+		--background-color-emphasized: #212121;
+		--background-color-tag: #333;
+		--color: #eee;
+		--color-accent: #d50d17;
+		--border-color: var(--background-color-emphasized);
+		--box-shadow-cards: none;
+		--color-scrollbar-thumb: #2f2f2f;
+	}
+}
+
+
+/*
+ * Enhanced contrast ratio on mobile devices...?
+ *
+ 
+@media (max-width: 600px) and (prefers-color-scheme: dark) {
+	html {
+		--background-color: #000;
+		--background-color-emphasized: #222124;
+		--background-color-tag: #444;
+	}
+}
+
+*/
+
+body {
+	margin: 0;
+	min-width: 25rem;
+	font-family: var(--font-stack-body);
+	word-wrap: break-word;
+	-ms-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+	line-height: 2;
+	background: var(--background-color);
+	color: var(--color);
+}
+
+::selection {
+	background: var(--background-color-selection);
+	color: var(--color-selection);
+}
+
+a {
+	text-decoration: none;
+	color: var(--background-color-accent);
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+	font-weight: normal;
+	font-family: var(--font-stack-headline);
+}
+
+h1,
+h2 {
+	text-transform: uppercase;
+}
+
+h1 {
+	font-size: xxx-large;
+	line-height: 1.5;
+}
+
+h1 .headline-partial {
+	white-space: nowrap;
+}
+
+h2 {
+	text-align: center;
+	font-size: xx-large;
+}
+
+h3 {
+	font-size: x-large;
+	margin-top: 0;
+	font-variant: small-caps;
+}
+
+dd {
+	margin: 0;
+}
+
+dt::after {
+	content: ":";
+}
+
+blockquote {
+	padding-left: 1.5rem;
+	border-left: 5px solid var(--background-color-selection);
+	border-radius: var(--border-radius);
+	background: var(--background-color-emphasized);
+	padding: 1rem;
+	box-sizing: border-box;
+	margin: 0;
+}
+
+blockquote::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+cite {
+	font-size: medium;
+	float: right;
+}
+
+cite::before {
+	content: "\a— ";
+	white-space: pre;
+}
+
+summary:hover {
+	cursor: pointer;
+}
+
+iframe {
+	border: 0;
+	height: 80vh;
+	max-height: 80vh;
+}
+
+video {
+	display: block;
+	max-height: 80vh;
+	scroll-snap-align: top;
+	object-fit: cover;
+}
+
+ul {
+	padding-left: 1rem;
+}
+
+section,
+footer {
+	--section-padding: 2rem;
+
+	padding-top: var(--section-padding);
+	padding-bottom: var(--section-padding);
+}
+
+p {
+	margin: 1.5rem 0;
+}
+
+img {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+a.btn {
+	background-color: var(--background-color-selection);
+	padding: .75rem 2rem;
+	color: var(--color-selection);
+	border-radius: .5rem;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+}
+
+ul.tags {
+	display: inline-flex;
+	gap: .5rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.tags>li {
+	font-size: smaller;
+	background-color: var(--background-color-tag);
+	padding: .2rem .5rem;
+	border-radius: var(--border-radius);
+}
+
+.full-width {
+	width: calc(100% + 2 * var(--section-padding));
+	margin: auto calc(var(--section-padding) * -1);
+
+	width: 100%;
+	margin: 0;
+}
+
+@media (min-width: 1440px) {
+	.container {
+		max-width: var(--max-width-container);
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+section h2 {
+	position: sticky;
+	left:0;
+	right: 0;
+	top: 0;
+	background-color: var(--background-color);
+}
+
+/**********************************************************************************/
+/* Header                                                                         */
+/**********************************************************************************/
+
+header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 4rem;
+	box-sizing: border-box;
+	background-color: var(--background-color-emphasized);
+	box-shadow: var(--box-shadow-cards);
+	position: relative;
+	overflow: hidden;
+}
+
+header h1 {
+	text-align: center;
+	flex: 1 1 auto;
+}
+
+header img {
+	/* See source code of the SVG graphic */
+	--aspect-ratio: calc(100 / 190);
+	--target-image-width: 29rem;
+	--max-image-width: 100vw;
+
+	width: var(--target-image-width);
+	height: calc(var(--target-image-width) * var(--aspect-ratio));
+	max-width: var(--max-image-width);
+	max-height: calc(var(--max-image-width) * var(--aspect-ratio));
+	margin: 5vh auto;
+	display: block;
+}
+
+#timer {
+	background-color: var(--background-color);
+	color: var(--color);
+	font-family: var(--font-stack-headline);
+	font-size: larger;
+	position: absolute;
+	transform: rotate(30deg);
+	transform-origin: top right;
+	z-index: 2;
+	padding: 1rem;
+	text-align: center;
+	top: 20rem;
+	right: -5rem;
+	width: 45rem;
+}
+
+#timer[data-close="true"] {
+	background-color: var(--background-color-accent);
+}
+
+@media (max-width: 960px) {
+	#timer {
+		display: none;
+	}
+}
+
+/**********************************************************************************/
+/* Carousel                                                                       */
+/**********************************************************************************/
+
+.carousel {
+	--gap: 2rem;
+
+	display: flex;
+	column-gap: 2rem;
+	overflow: auto;
+	scroll-snap-type: x mandatory;
+	scrollbar-width: none;
+	padding: var(--section-padding);
+}
+
+.carousel article {
+	--padding-horizontal: 1.5rem;
+
+	scroll-snap-align: center;
+	flex: 0 0 min(30rem, calc(100% - 5rem));
+	display: flex;
+	flex-direction: column;
+	background-color: var(--background-color-emphasized);
+	box-shadow: var(--box-shadow-cards);
+	padding: var(--padding-horizontal);
+	overflow: hidden;
+	border-radius: var(--border-radius);
+}
+
+@media (prefers-color-scheme: dark) {
+	.carousel article {
+		background-color: var(--background-color-emphasized);
+	}
+}
+
+.carousel h3 {
+	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.carousel img {
+	margin: 0 calc(var(--padding-horizontal) * -1);
+	background-color: var(--background-color-emphasized);
+	width: calc(100% + var(--padding-horizontal) * 2);
+	height: 25vh;
+	object-fit: cover;
+}
+
+.carousel img ~ :last-child {
+	margin-bottom: 0;
+}
+
+.carousel img ~ p:has(.btn) {
+	text-align: center;
+}
+
+@media (min-width: 1440px) {
+	.carousel {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--gap);
+	}
+
+	.carousel article {
+		--final-count: var(--count, 3);
+
+		box-sizing: border-box;
+		flex: 0 0 calc(100% / var(--final-count) - (var(--gap) * (var(--final-count) - 1) / var(--final-count)));
+	}
+}
+
+.carousel :has(+ul.tags:last-child) {
+	flex: 1 0 auto;
+}
+
+/**********************************************************************************/
+/* Carousel / Image                                                               */
+/**********************************************************************************/
+/* Shows a carousel with full-width images consuming limited height of 25vh.      */
+/**********************************************************************************/
+
+.carousel.carousel-image img {
+	width: calc(100% + var(--padding-horizontal) * 2);
+	box-sizing: border-box;
+	height: 25vh;
+	margin: 0 calc(var(--padding-horizontal) * -1);
+	background-color: var(--background-color-emphasized);
+	object-fit: cover;
+}
+
+/**********************************************************************************/
+/* Carousel / Document                                                            */
+/**********************************************************************************/
+/* Shows a carousel with full-width images consuming as much height as needed to  */
+/* display the full image.                                                        */
+/**********************************************************************************/
+
+.carousel.carousel-document img {
+	width: calc(100% + var(--padding-horizontal) * 2);
+	box-sizing: border-box;
+	height: auto;
+	margin: 0 calc(var(--padding-horizontal) * -1);
+	background-color: var(--background-color-emphasized);
+	object-fit: cover;
+}
+
+/**********************************************************************************/
+/* Carousel / Icon                                                                */
+/**********************************************************************************/
+
+.carousel.carousel-icon img {
+	width: 100%;
+	box-sizing: border-box;
+	height: 10rem;
+	margin: 0 auto 1rem auto;
+	display: block;
+	object-fit: contain;
+}
+
+/**********************************************************************************/
+/* Ratings                                                                        */
+/**********************************************************************************/
+
+section.ratings {
+	--gap: 2rem;
+}
+
+section.ratings div {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap);
+	padding: var(--section-padding);
+}
+
+section.ratings blockquote {
+	--count: 3;
+
+	flex: 0 0 calc(100% / var(--count) - (var(--gap) * (var(--count) - 1) / var(--count)));
+}
+
+@media (min-width: 1440px) {
+	section.ratings div {
+		flex-direction: row;
+	}
+}
+
+/**********************************************************************************/
+/* Footer                                                                         */
+/**********************************************************************************/
+
+footer {
+	background-color: var(--background-color-emphasized);
+	box-shadow: var(--box-shadow-cards);
+	text-align: center;
+	margin-top: 3rem;
+	padding-bottom: 3rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+footer div {
+	gap: var(--section-padding);
+}
+
+footer address {
+	font-style: normal;
+}
+
+@media(min-width: 1440px) {
+	footer div {
+		display: flex;
+	}
+
+	footer article {
+		flex: 0 0 calc((100% - var(--section-padding) * 2) / 3);
+	}
+
+	footer article:nth-child(1) {
+		order: 2;
+	}
+
+	footer article:nth-child(2) {
+		order: 1;
+	}
+
+	footer article:nth-child(3) {
+		order: 3;
+	}
+}
