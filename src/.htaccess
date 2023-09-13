@@ -2,7 +2,6 @@
 #RewriteCond %{HTTP_HOST} !^www\.
 #RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
 
-Redirect 301 /index.html /
 Redirect 301 /anreise.html /
 Redirect 301 /aufnahmeantrag.html /
 Redirect 301 /datenschutzerklaerung.html /
