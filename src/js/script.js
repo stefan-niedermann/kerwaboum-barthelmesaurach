@@ -9,8 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const kerwaCountdown = document.querySelector('time');
     kerwaCountdown.setAttribute('datetime', date.toISOString());
-    if (kerwaCountdown.dayOfKerwa !== undefined) {
-        const targetDayElement = document.querySelector(`#timetable article:nth-child(${kerwaCountdown.dayOfKerwa})`);
+
+    if (kerwaCountdown.currentDay === undefined) {
+        document.querySelector(`#timetable div`).scrollLeft = 0;
+    } else {
+        const targetDayElement = document.querySelector(`#timetable article:nth-child(${kerwaCountdown.currentDay})`);
         document.querySelector(`#timetable div`).scrollLeft = targetDayElement.offsetLeft;
     }
 });

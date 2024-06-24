@@ -1,82 +1,64 @@
 export class KerwaCountdownComponent extends HTMLTimeElement {
 
-    #endDate;
-    #interval;
-    #kerwaStart;
-    #dayOfKerwa;
-
     static get observedAttributes() {
         return ['datetime'];
     }
 
-    get kerwaStart() {
-        return this.#kerwaStart;
-    }
+    #input = {
+        end: undefined,
+        remaining: undefined
+    };
 
-    get dayOfKerwa() {
-        return this.#dayOfKerwa;
-    }
+    #subscription;
 
     constructor() {
         super();
     }
 
     connectedCallback() {
-        this.setAttribute('id', 'timer');
-        this.#startCountdown();
+        this.style.display = 'none';
+        this.#setEnd(this.getAttribute('datetime'));
+        this.#subscription = setInterval(this.#render.bind(this), 1_000);
     }
 
-    attributeChangedCallback(name, oldValue, newValue) {
+    attributeChangedCallback(name, _, newValue) {
         switch (name) {
             case 'datetime': {
-                this.#startCountdown();
+                this.#setEnd(newValue);
                 break;
             }
         }
     }
 
-    #startCountdown() {
-        const now = new Date();
-        this.#kerwaStart = new Date(Date.parse(this.getAttribute('datetime')))
-        this.#endDate = this.#kerwaStart.getTime();
-
-        if (this.#interval !== undefined) {
-            clearInterval(this.#interval);
-        }
-
-        this.#interval = setInterval(this.#calculate, 1_000);
-        this.#calculate();
-
-        if (this.#kerwaStart.getMonth() === now.getMonth() &&
-            now.getDate() >= this.#kerwaStart.getDate() &&
-            now.getDate() <= this.#kerwaStart.getDate() + 5) {
-
-            const weekdayKerwaday = new Map([[6, 2], [7, 3], [1, 4]]);
-            this.#dayOfKerwa = weekdayKerwaday.get(now.getDay());
-
-        } else {
-            this.#dayOfKerwa = undefined;
-        }
-
-    }
-
     disconnectedCallback() {
-        clearInterval(this.#interval);
+        clearInterval(this.#subscription);
     }
 
-    // #getKerwaStart() {
-    //     const currentYear = new Date().getFullYear();
-    //     const date = new Date(currentYear, 8, 1, 12);
-    //     let weekday = date.getDay();
-    //     let dayDiff = weekday === 0 ? 7 : weekday;
-    //     let lastSunday = date.setDate(date.getDate() - dayDiff - 7 - 2);
-    //     return date;
-    // }
+    #setEnd(newValue) {
+        let end = undefined;
+        let remaining = undefined;
 
-    #calculate() {
-        const now = new Date();
-        let timeRemaining = parseInt((this.#endDate - now.getTime()) / 1_000);
-        if (timeRemaining >= 0) {
+        if (typeof newValue === 'string') {
+            const newValueTimestamp = Date.parse(newValue);
+            if (Number.isInteger(newValueTimestamp)) {
+                end = newValueTimestamp;
+
+                if (Number.isInteger(end)) {
+                    const newRemainingSeconds = parseInt((end - new Date().getTime()) / 1_000);
+                    if (Number.isInteger(newRemainingSeconds)) {
+                        remaining = newRemainingSeconds;
+                    }
+                }
+            }
+        }
+
+        this.#input = { ...this.#input, end, remaining }
+    }
+
+    #render() {
+        let timeRemaining = this.#input.remaining;
+
+        if (timeRemaining !== undefined && timeRemaining >= 0) {
             const days = parseInt(timeRemaining / 86_400);
             timeRemaining = (timeRemaining % 86_400);
             const hours = parseInt(timeRemaining / 3600);
@@ -96,21 +78,29 @@ export class KerwaCountdownComponent extends HTMLTimeElement {
                 newText = `Noch ${days} Tage, ${hours} Stunden, ${minutes} Minuten, ${seconds} Sekunden`;
             }
 
+            if (this.textContent !== newText) {
+                this.textContent = newText;
+            }
 
-            this.#setText(now, newText);
+            this.style.display = 'unset';
         } else {
-            // this.remove();
-            this.#setText(now, '');
-            clearInterval(this.#interval);
-            return;
+            this.style.display = 'none';
         }
-    };
 
-    #setText(now, newText) {
-        if (this.textContent !== newText) {
-            this.textContent = newText;
+        const endDate = Number.isInteger(this.#input.end) ? new Date(this.#input.end) : undefined;
+        const now = new Date();
+        const newClose = now.getMonth() === endDate.getMonth();
+        if (this.dataset.close !== newClose) {
+            this.dataset.close = newClose;
         }
-        this.dataset.close = now.getMonth() === this.#kerwaStart.getMonth();
+
+        if (endDate.getMonth() === now.getMonth() &&
+            now.getDate() >= endDate.getDate() &&
+            now.getDate() <= endDate.getDate() + 5) {
+
+            const weekdayKerwaday = new Map([[6, 2], [7, 3], [1, 4]]);
+            this.dataset.currentDay = weekdayKerwaday.get(now.getDay());
+        }
     }
 }
 
