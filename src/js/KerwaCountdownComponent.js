@@ -18,7 +18,7 @@ export class KerwaCountdownComponent extends HTMLTimeElement {
     connectedCallback() {
         this.style.display = 'none';
         this.#setEnd(this.getAttribute('datetime'));
-        this.#subscription = setInterval(this.#render.bind(this), 1_000);
+        this.#subscription = setInterval(this.#calculateRemaining.bind(this), 1_000);
     }
 
     attributeChangedCallback(name, _, newValue) {
@@ -34,25 +34,44 @@ export class KerwaCountdownComponent extends HTMLTimeElement {
         clearInterval(this.#subscription);
     }
 
-    #setEnd(newValue) {
-        let end = undefined;
+    #calculateRemaining() {
         let remaining = undefined;
+        const end = this.#input.end;
 
-        if (typeof newValue === 'string') {
-            const newValueTimestamp = Date.parse(newValue);
-            if (Number.isInteger(newValueTimestamp)) {
-                end = newValueTimestamp;
-
-                if (Number.isInteger(end)) {
-                    const newRemainingSeconds = parseInt((end - new Date().getTime()) / 1_000);
-                    if (Number.isInteger(newRemainingSeconds)) {
-                        remaining = newRemainingSeconds;
-                    }
-                }
+        if (Number.isInteger(end)) {
+            const newRemaining = parseInt((end - new Date().getTime()) / 1_000);
+            if (Number.isInteger(newRemaining)) {
+                remaining = newRemaining;
             }
         }
 
-        this.#input = { ...this.#input, end, remaining }
+        if (this.#input.remaining !== remaining) {
+            this.#updateState({ ...this.#input, remaining });
+        }
+    }
+
+    #setEnd(newEndStr) {
+        let end = undefined;
+
+        if (typeof newEndStr === 'string') {
+            const newEndMillis = Date.parse(newEndStr);
+            if (Number.isInteger(newEndMillis)) {
+                end = newEndMillis;
+            }
+        }
+
+        if (this.#input.end !== end) {
+            this.#updateState({ ...this.#input, end });
+            this.#calculateRemaining();
+        }
+    }
+
+    #updateState(newState) {
+        this.#input = {
+            ...this.#input,
+            ...newState
+        };
+        this.#render();
     }
 
     #render() {
@@ -89,17 +108,24 @@ export class KerwaCountdownComponent extends HTMLTimeElement {
 
         const endDate = Number.isInteger(this.#input.end) ? new Date(this.#input.end) : undefined;
         const now = new Date();
-        const newClose = now.getMonth() === endDate.getMonth();
-        if (this.dataset.close !== newClose) {
-            this.dataset.close = newClose;
+
+        if (endDate !== undefined) {
+            const newClose = now.getMonth() === endDate.getMonth();
+            if (this.dataset.close !== newClose) {
+                this.dataset.close = newClose;
+            }
+        } else {
+            this.dataset.close = undefined;
         }
 
-        if (endDate.getMonth() === now.getMonth() &&
+        if (endDate !== undefined && endDate.getMonth() === now.getMonth() &&
             now.getDate() >= endDate.getDate() &&
             now.getDate() <= endDate.getDate() + 5) {
 
             const weekdayKerwaday = new Map([[6, 2], [7, 3], [1, 4]]);
             this.dataset.currentDay = weekdayKerwaday.get(now.getDay());
+        } else {
+            this.dataset.currentDay = undefined;
         }
     }
 }
