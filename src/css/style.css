@@ -184,6 +184,7 @@ a.btn {
 
 ul.tags {
 	display: inline-flex;
+	flex-wrap: wrap;
 	gap: .5rem;
 	list-style: none;
 	margin: 0;
